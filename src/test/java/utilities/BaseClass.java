@@ -59,7 +59,7 @@ public class BaseClass {
 
 	
 //	tear down instance of driver
-	@AfterMethod(enabled = true)
+	@AfterMethod(enabled = false)
 	public static void tearDown() {
 
 		if (driver != null) {

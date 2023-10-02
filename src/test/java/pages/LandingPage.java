@@ -15,7 +15,6 @@ public class LandingPage {
 		
 //		first parameter is instance of driver, this = instance of page object
 		PageFactory.initElements(BaseClass.getDriver(), this);
-		
 	}
 	
 	@FindBy(xpath = "//p[@class='oxd-userdropdown-name']")
@@ -24,7 +23,4 @@ public class LandingPage {
 	@FindBy(xpath = "//ul[@class='oxd-dropdown-menu']/li")
 	public List<WebElement> profileDropdown;	
 	
-	
-	
-
 }

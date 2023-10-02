@@ -40,11 +40,8 @@ public class CommonMethods extends PageInitializer {
 		
 //		loop through profile dropdown options and click desired dropdown text
 //		List<WebElement> profileSetting = BaseClass.getDriver().findElements(By.xpath(BaseClass.getProperty("profileDropdown")));
-		
 		List<WebElement> profileSetting = landP.profileDropdown;
-		
 		for(WebElement dropdownMenu : profileSetting) {
-			
 			if(dropdownMenu.getText().equalsIgnoreCase(itemText)) {
 				dropdownMenu.click();
 				break;
@@ -56,17 +53,26 @@ public class CommonMethods extends PageInitializer {
 	
 //	below method clicks on one of the menu item on the left side menu bar
 	public static void clickOnLeftMenuBarItem(String itemText) {
-		
 		List<WebElement> leftMenuBar = comP.leftMenuBarItem;
-		
 		for(WebElement menuItem : leftMenuBar) {
-			
 			if(menuItem.getText().equalsIgnoreCase(itemText)) {
 				menuItem.click();
 				break;
 			}
 		}
 		
+	}
+	
+	
+//	below method clicks on one of the tabs on the My Info page
+	public static void clickOnMyInfoTabItem(String itemText) {
+		List<WebElement> myInfoTabs = myInfoP.myInfoTabItem;
+		for(WebElement tabItem : myInfoTabs) {
+			if(tabItem.getText().equalsIgnoreCase(itemText)) {
+				tabItem.click();
+				break;
+			}
+		}
 	}
 	
 	
@@ -112,7 +118,7 @@ public class CommonMethods extends PageInitializer {
 	}
 	
 	
-//	explicit wait method
+//	explicit wait methods
 	public static WebDriverWait getWaitObject() {
 		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), 30);
 		return wait;
@@ -249,10 +255,8 @@ public class CommonMethods extends PageInitializer {
     
 //    method to get time stamp
     public static String getTimeStamp() {
-    	
     	Date date = new Date();
     	SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH:mm:ss");
-    	
     	return sdf.format(date.getTime());
     }
 		
