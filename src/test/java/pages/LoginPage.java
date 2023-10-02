@@ -13,7 +13,6 @@ public class LoginPage {
 		
 //		first parameter is instance of driver, this = instance of page object
 		PageFactory.initElements(BaseClass.getDriver(), this);
-		
 	}
 	
 	@FindBy(xpath = "//input[@name='username']")
@@ -29,14 +28,10 @@ public class LoginPage {
 	public WebElement invalidCredentialsText;
 	
 	
-	
-	
 	public void loginToHrm(String username, String password) {
 		usernameInput.sendKeys(username);
 		passwordInput.sendKeys(password);
 		login.click();
-		
 	}
-	
 
 }
