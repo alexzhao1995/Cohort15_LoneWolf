@@ -44,17 +44,17 @@ public class LON137LON32 extends CommonMethods {
 		
 		BaseClass.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/div/div[2]/div/div")).click();
 		
-		//CommonMethods.hardWait(10);
-		
-//		WebElement element = BaseClass.getDriver().findElement(By.xpath("//div[@role='listbox']"));
-//        JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
-//        js.executeScript("arguments[0].click();", element);
-//        
-        //CommonMethods.hardWait(10);
-        
-
 		CommonMethods.hardWait(10);
-		CommonMethods.jsClick(myInfoP.ContactDetails);
+		
+		CommonMethods.jsScrollToElement(myInfoP.HiddenList);
+        
+		CommonMethods.selectDropDownValue(myInfoP.HiddenListBox,"Contact Details");
+		//div[@class='oxd-select-option']
+        //CommonMethods.hardWait(10);
+		//div[@role='listbox']
+
+//		CommonMethods.hardWait(10);
+//		CommonMethods.jsClick(myInfoP.ContactDetails);
 		
 		
 	}
