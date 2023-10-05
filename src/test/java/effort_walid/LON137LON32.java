@@ -1,13 +1,10 @@
 package effort_walid;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.openqa.selenium.JavascriptExecutor;
 import utilities.BaseClass;
 import utilities.CommonMethods;
 
@@ -26,35 +23,40 @@ public class LON137LON32 extends CommonMethods {
 	
 		
 		// Click on the Configuration drop-button
-		CommonMethods.clickOnConfiguration("Configuration");
+		CommonMethods.clickOnPImTopBar("Configuration");
 		
 		// Wait for visibility Custom Fields
-		CommonMethods.waitForVisibility(jobP.CustomFields);
+		CommonMethods.waitForVisibility(pimCon.FieldsConfiguration);
 		
 		// Click on the Custom Fields of Configuration
-		CommonMethods.clickOnCustomFields("Custom Fields");
+		CommonMethods.clickOnConfiguration("Custom Fields");
 		
 		// Click on +Add
-		BaseClass.getDriver().findElement(By.xpath("//button[contains(@class,'button--secondary')]")).click();
+		pimCon.Add.click();
 		
 		
 		//Enter "Lisa G" in the "Field Name" input field
-		CommonMethods.sendKey(myInfoP.AddCustomField, "Lisa G");
+		CommonMethods.sendKey(pimCon.AddCustomField, "Lisa G");
+		
+		//Click on arrow button of the Screen*
+		BaseClass.getDriver().findElement(By.xpath("(//div[@class='oxd-select-text-input'])[1]")).click();
 		
 		
-		BaseClass.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/div/div[2]/div/div")).click();
+		//Click on Contact Details
+		BaseClass.getDriver().findElement(By.xpath("//div[@class='oxd-select-wrapper']/div[2]/div[3]/span[contains(text(), 'Contact Details')]")).click();
 		
-		CommonMethods.hardWait(10);
+		//Click on arrow button of the Type*	
+		BaseClass.getDriver().findElement(By.xpath("(//div[@class='oxd-select-text-input'])[2]")).click();
 		
-		CommonMethods.jsScrollToElement(myInfoP.HiddenList);
-        
-		CommonMethods.selectDropDownValue(myInfoP.HiddenListBox,"Contact Details");
-		//div[@class='oxd-select-option']
-        //CommonMethods.hardWait(10);
-		//div[@role='listbox']
-
-//		CommonMethods.hardWait(10);
-//		CommonMethods.jsClick(myInfoP.ContactDetails);
+		//Click on Text or Number	
+		BaseClass.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div/div/div[2]/div/div[2]/div[2]/span")).click();
+		
+		//Click on Save
+		pimCon.Save.click();
+    	
+		
+		
+		
 		
 		
 	}
