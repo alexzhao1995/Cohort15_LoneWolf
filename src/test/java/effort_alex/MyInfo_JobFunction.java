@@ -234,7 +234,7 @@ public class MyInfo_JobFunction extends CommonMethods {
 		clickOnListItem(personalDetailsP.countries, "Australian");
 		
 
-		
+		hardWait(2);
 		
 
 
