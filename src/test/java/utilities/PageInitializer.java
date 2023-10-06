@@ -6,6 +6,7 @@ import pages.LoginPage;
 import pages.MyInfoPage;
 import pages.MyInfo_JobPage;
 import pages.MyInfo_ReportToPage;
+import pages.PIMConfiguration;
 
 public class PageInitializer extends BaseClass {
 	
@@ -16,6 +17,8 @@ public class PageInitializer extends BaseClass {
 	public static MyInfo_ReportToPage reportToP;
 	public static MyInfo_JobPage jobP;
 	
+	//PIM
+	public static PIMConfiguration pimCon;
 	public static void initialize() {
 		lp = new LoginPage();
 		landP = new LandingPage();
@@ -23,7 +26,7 @@ public class PageInitializer extends BaseClass {
 		myInfoP = new MyInfoPage();
 		reportToP = new MyInfo_ReportToPage();
 		jobP = new MyInfo_JobPage();
-		
+		pimCon=new PIMConfiguration();
 	}
 
 }

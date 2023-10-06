@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="effort_alex.OrangeHRM_TestingLogin">
+      <class name="effort_walid.LON140LON38">
         <methods>
           <include name="getDriver"/>
           <include name="tearDown"/>
-          <include name="loginValidUserNameValidPassword"/>
+          <include name="PIMTestingReports"/>
         </methods>
-      </class> <!-- effort_alex.OrangeHRM_TestingLogin -->
+      </class> <!-- effort_walid.LON140LON38 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

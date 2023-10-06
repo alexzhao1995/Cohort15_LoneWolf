@@ -19,5 +19,12 @@ public class MyInfoPage {
 	
 	@FindBy(xpath = "(//h6[@class='oxd-text oxd-text--h6 orangehrm-main-title'])[1]")
 	public WebElement personalDetailsText;
+	
+	
+	
+	
+	//span[@data-v-13cf171c=''][text()='Contact Details']
+
+
 
 }

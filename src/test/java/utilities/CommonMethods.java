@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
@@ -75,10 +76,77 @@ public class CommonMethods extends PageInitializer {
 		}
 	}
 	
+	//below method clicks on one of the topBar PIM
+	public static void clickOnPImTopBar(String itemText) {
+		List<WebElement> pimTabs = comP.PimTopBar;
+		for(WebElement tabItem : pimTabs) {
+			if(tabItem.getText().equalsIgnoreCase(itemText)) {
+				tabItem.click();
+				break;
+			}
+		}
+	}
+	
+	//below method clicks on one of the Configuration PIM
+		public static void clickOnConfiguration(String itemText) {
+			List<WebElement> ConfigurationTabs = comP.PimConfiguration;
+			for(WebElement tabItem : ConfigurationTabs) {
+				if(tabItem.getText().equalsIgnoreCase(itemText)) {
+					tabItem.click();
+					break;
+				}
+			}
+		}
+		
+		//below method clicks on one of the Configuration PIM
+				public static void clickOnTabEmployeeList(String itemText) {
+					List<WebElement> ConfigurationTabs = comP.PimEmployeeList;
+					for(WebElement tabItem : ConfigurationTabs) {
+						if(tabItem.getText().equalsIgnoreCase(itemText)) {
+							tabItem.click();
+							break;
+						}
+					}
+				}
+		
+	
 	
 //	generate random first name
 	public static String randomFirstName() {
 		return faker.name().firstName();
+	}
+	
+//	generate random middle name
+	public static String randomMiddleName() {
+		return faker.pokemon().name();
+	}
+	
+//	generate random last name
+	public static String randomLastName() {
+		return faker.harryPotter().character();
+	}
+//	generate random street
+	public static String randomStrees() {
+		return faker.address().streetAddress();
+	}
+	
+//	generate random ZIP
+	public static String randomZIP() {
+		return faker.address().zipCode();
+	}
+//	generate random City
+	public static String randomCity() {
+		return faker.address().city();
+	}
+	
+	//	generate random Phone
+	public static String randomPhone() {
+		return faker.phoneNumber().cellPhone();
+	}
+	
+//	generate random Phone
+	public static String randomEmail() {
+		return faker.internet().emailAddress();
 	}
 	
 	
@@ -141,6 +209,8 @@ public class CommonMethods extends PageInitializer {
 		element.click();
 	}	
 	
+
+	
 	
 //	JavaScript Executer Object
 	public static JavascriptExecutor getJSObject() {
@@ -160,6 +230,20 @@ public class CommonMethods extends PageInitializer {
 	public static void jsScrollToElement(WebElement element) {
 		getJSObject().executeScript("arguments[0].scrollIntoView();", element);
 	}
+
+	
+	
+//    public static void testHiddenElement(WebElement element) {
+//    	
+//    
+//        // Identify the hidden element and interact with it using JavaScriptExecutor
+//        WebElement element = BaseClass.getDriver().findElement(By.xpath(element));
+//        JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
+//        js.executeScript("arguments[0].click();", element);
+
+        // Perform assertions or further actions
+        // ...
+    
 	
 	
 //	send text to alert method
@@ -209,7 +293,9 @@ public class CommonMethods extends PageInitializer {
     
 //    select drop down by value method
     public static void selectDropDownValue(WebElement dropDownElement, String textToSelect) {
+    	
         try {
+        	
             Select select = new Select(dropDownElement);
             List<WebElement> options = select.getOptions();
             for (WebElement el : options) {

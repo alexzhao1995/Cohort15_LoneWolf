@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-28T18:11:05 EDT" name="Default suite" finished-at="2023-09-28T18:11:12 EDT" duration-ms="7134">
+  <suite started-at="2023-10-06T00:39:15 EDT" name="Default suite" finished-at="2023-10-06T00:39:45 EDT" duration-ms="30119">
     <groups>
     </groups>
-    <test started-at="2023-09-28T18:11:05 EDT" name="Default test" finished-at="2023-09-28T18:11:12 EDT" duration-ms="7134">
-      <class name="effort_alex.OrangeHRM_TestingLogin">
-        <test-method is-config="true" signature="getDriver()[pri:0, instance:effort_alex.OrangeHRM_TestingLogin@3db3668]" started-at="2023-09-28T18:11:05 EDT" name="getDriver" finished-at="2023-09-28T18:11:09 EDT" duration-ms="3716" status="PASS">
+    <test started-at="2023-10-06T00:39:15 EDT" name="Default test" finished-at="2023-10-06T00:39:45 EDT" duration-ms="30119">
+      <class name="effort_walid.LON140LON38">
+        <test-method is-config="true" signature="getDriver()[pri:0, instance:effort_walid.LON140LON38@27ada0e8]" started-at="2023-10-06T00:39:15 EDT" name="getDriver" finished-at="2023-10-06T00:39:19 EDT" duration-ms="4179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriver -->
-        <test-method signature="loginValidUserNameValidPassword()[pri:0, instance:effort_alex.OrangeHRM_TestingLogin@3db3668]" started-at="2023-09-28T18:11:09 EDT" name="loginValidUserNameValidPassword" finished-at="2023-09-28T18:11:12 EDT" duration-ms="3239" status="PASS">
+        <test-method signature="PIMTestingReports()[pri:0, instance:effort_walid.LON140LON38@27ada0e8]" started-at="2023-10-06T00:39:19 EDT" name="PIMTestingReports" finished-at="2023-10-06T00:39:45 EDT" duration-ms="25903" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginValidUserNameValidPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:effort_alex.OrangeHRM_TestingLogin@3db3668]" started-at="2023-09-28T18:11:12 EDT" name="tearDown" finished-at="2023-09-28T18:11:12 EDT" duration-ms="154" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- effort_alex.OrangeHRM_TestingLogin -->
+        </test-method> <!-- PIMTestingReports -->
+      </class> <!-- effort_walid.LON140LON38 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
