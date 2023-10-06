@@ -54,16 +54,16 @@ public class CommonMethods extends PageInitializer {
 	
 	
 //	below method clicks on one of the menu item on the left side menu bar
-//	public static void clickOnLeftMenuBarItem(String itemText) {
-//		List<WebElement> leftMenuBar = comP.leftMenuBarItem;
-//		for(WebElement menuItem : leftMenuBar) {
-//			if(menuItem.getText().equalsIgnoreCase(itemText)) {
-//				menuItem.click();
-//				break;
-//			}
-//		}
-//		
-//	}
+	public static void clickOnLeftMenuBarItem(String itemText) {
+		List<WebElement> leftMenuBar = comP.leftMenuBarItem;
+		for(WebElement menuItem : leftMenuBar) {
+			if(menuItem.getText().equalsIgnoreCase(itemText)) {
+				menuItem.click();
+				break;
+			}
+		}
+		
+	}
 	
 	
 //	below method clicks on one of the items from the dropdown list
