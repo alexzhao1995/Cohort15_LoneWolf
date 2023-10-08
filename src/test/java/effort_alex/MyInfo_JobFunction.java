@@ -1,5 +1,7 @@
 package effort_alex;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,10 +31,9 @@ public class MyInfo_JobFunction extends CommonMethods {
 		
 //		explicit wait for Employment Contract Details switch button
 		waitForClickability(jobP.contractDetailsButton);
-//		CommonMethods.waitForVisibility(jobP.contractDetailsButton);
-//		CommonMethods.waitForVisibility(jobP.contractDetailsButtonText);
-//		new WebDriverWait(getDriver(), 15).until(ExpectedConditions.elementToBeClickable(jobP.contractDetailsButton)).click();
-//		CommonMethods.hardWait(3);
+//		waitForVisibility(jobP.contractDetailsButton);
+//		waitForVisibility(jobP.contractDetailsButtonText);
+//		hardWait(3);
 
 //		click on Include Employment Contract Details switch button
 		jobP.contractDetailsButton.click();
@@ -90,156 +91,170 @@ public class MyInfo_JobFunction extends CommonMethods {
 		Assert.assertTrue(landP.profile.isDisplayed());
 		
 //		navigate to My Info page
-//		clickOnLeftMenuBarItem("My Info");
-		clickOnListItem(comP.leftMenuBarItem, "My Info");
+		clickOnListItem(comP.leftMenuBarItem, BaseClass.getProperty("myInfoPage"));
 //		validate on My Info page with the Personal Details text
 		Assert.assertEquals(myInfoP.personalDetailsText.getText(), BaseClass.getProperty("personalDetailsText"));
 		
+//		wait for form loader to disappear
+		getWaitObject().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(BaseClass.getProperty("myInfoFormLoaderXpath"))));
+		waitForVisibility(personalDetailsP.empFullNameText);
+		waitForVisibility(personalDetailsP.firstNameInput);
+		waitForClickability(personalDetailsP.firstNameInput);
+		
 //		navigate to Personal Details tab on My Info page
-//		By default page lands on Personal Details page
+//		by default page lands on Personal Details page
 //		validate on Personal Details tab with first, last, and nickname input fields displayed
 		Assert.assertTrue(personalDetailsP.firstNameInput.isDisplayed());
 		Assert.assertTrue(personalDetailsP.lastNameInput.isDisplayed());
 		Assert.assertTrue(personalDetailsP.nicknameInput.isDisplayed());
 		
-//		input first name, middle name, last name, nickname, employee ID, and DL's #
-//		CommonMethods.hardWait(2);
-//		CommonMethods.waitForVisibility(myInfoP.personalDetailsText);
-//		CommonMethods.waitForClickability(personalDetailsP.firstNameInput);
-//		CommonMethods.getWaitObject().until(ExpectedConditions.elementToBeClickable(personalDetailsP.firstNameInput));
-		
-//		CommonMethods.onClick(personalDetailsP.firstNameInput);
-		
 //		click on first name input
 		personalDetailsP.firstNameInput.click();
-		
-//		CommonMethods.hardWait(3);
-		
-//		personalDetailsP.firstNameInput.clear();
-		
-//		personalDetailsP.firstNameInput.sendKeys(Keys.DELETE);
-		
 //		clear the first name input text box with JavascriptExecutor
-//		WebElement firstNameInput = personalDetailsP.firstNameInput;
-//		JavascriptExecutor executor = (JavascriptExecutor) BaseClass.getDriver();
-//		executor.executeScript("arguments[0].value = '';", personalDetailsP.firstNameInput);
 		jsClear(personalDetailsP.firstNameInput);
-		
 //		enter first name
 		personalDetailsP.firstNameInput.sendKeys(BaseClass.getProperty("myInfoFirstName"));
-		
-//		validate first name text box is !empty
-//		System.out.println(personalDetailsP.firstNameInput.getText());
-		
-		
+//		validate first name text box has correct input
+		Assert.assertEquals(personalDetailsP.firstNameInput.getAttribute("value"), BaseClass.getProperty("myInfoFirstName"));
+		System.out.println(personalDetailsP.firstNameInput.getAttribute("value"));
+
 //		click on middle name input
 		personalDetailsP.middleNameInput.click();
-		
 //		clear the middle name input text box with JavascriptExecutor
 		jsClear(personalDetailsP.middleNameInput);
-
 //		enter middle name
 		personalDetailsP.middleNameInput.sendKeys(BaseClass.getProperty("myInfoMiddleName"));
+//		validate middle name text box has correct input
+		Assert.assertEquals(personalDetailsP.middleNameInput.getAttribute("value"), BaseClass.getProperty("myInfoMiddleName"));
+		System.out.println(personalDetailsP.middleNameInput.getAttribute("value"));
 		
 //		click on last name input
 		personalDetailsP.lastNameInput.click();
-		
 //		clear the last name input text box with JavascriptExecutor
 		jsClear(personalDetailsP.lastNameInput);
-
 //		enter last name
 		personalDetailsP.lastNameInput.sendKeys(BaseClass.getProperty("myInfoLastName"));
-		
-//		CommonMethods.hardWait(2);
+//		validate last name text box has correct input
+		Assert.assertEquals(personalDetailsP.lastNameInput.getAttribute("value"), BaseClass.getProperty("myInfoLastName"));
+		System.out.println(personalDetailsP.lastNameInput.getAttribute("value"));
 		
 //		click on nickname input
 		personalDetailsP.nicknameInput.click();
-		
-//		CommonMethods.hardWait(2);
-		
 //		clear the nickname input text box with JavascriptExecutor
 		jsClear(personalDetailsP.nicknameInput);
-		
-//		CommonMethods.hardWait(2);
-
 //		enter nickname
 		personalDetailsP.nicknameInput.sendKeys(BaseClass.getProperty("myInfoNickname"));
-		
-//		CommonMethods.hardWait(2);
+//		validate nickname text box has correct input
+		Assert.assertEquals(personalDetailsP.nicknameInput.getAttribute("value"), BaseClass.getProperty("myInfoNickname"));
+		System.out.println(personalDetailsP.nicknameInput.getAttribute("value"));
 		
 //		click on employee id input
 		personalDetailsP.empIdInput.click();
-		
-//		CommonMethods.hardWait(2);
-		
 //		clear the employee id input text box with JavascriptExecutor
 		jsClear(personalDetailsP.empIdInput);
-//		personalDetailsP.empIdInput.clear();
-//		personalDetailsP.empIdInput.sendKeys(Keys.DELETE);
-		
-//		CommonMethods.hardWait(2);
-
 //		enter employee id
 		personalDetailsP.empIdInput.sendKeys(BaseClass.getProperty("myInfoEmpId"));
+//		validate employee id box has correct input
+		Assert.assertEquals(personalDetailsP.empIdInput.getAttribute("value"), BaseClass.getProperty("myInfoEmpId"));
+		System.out.println(personalDetailsP.empIdInput.getAttribute("value"));
 		
 //		click on DL's Number text box
 		personalDetailsP.DLNumber.click();
-		
 //		clear the DL Number text box with JavascriptExecutor
 		jsClear(personalDetailsP.DLNumber);
-		
 //		enter DL Number
 		personalDetailsP.DLNumber.sendKeys(BaseClass.getProperty("myInfoDLNumber"));
+//		validate DL Number box has correct input
+		Assert.assertEquals(personalDetailsP.DLNumber.getAttribute("value"), BaseClass.getProperty("myInfoDLNumber"));
+		System.out.println(personalDetailsP.DLNumber.getAttribute("value"));
 		
-//		click on DL expiry calendar
-		personalDetailsP.DLExpiryCalendar.click();
-		
+//		click on DL expiry box
+		personalDetailsP.DLExpBox.click();
 //		click on calendar month
 		personalDetailsP.calendarMonth.click();
-		
-//		click on month October
-		clickOnListItem(personalDetailsP.months, "October");
-		
+//		select month October
+		clickOnListItem(personalDetailsP.months, BaseClass.getProperty("myInfoDLExpMonth"));
 //		click on calendar year
 		personalDetailsP.calendarYear.click();
-		
-//		hardWait(2);
-		
-//		click on year 2023
-//		clickOnYear("2023");
-		clickOnListItem(personalDetailsP.years, "2023");
-
-		
-//		hardWait(2);
-
-//		click on day 1 due to the year dropdown list blocking view of some dates (including 11th)
-		clickOnListItem(personalDetailsP.days, "1");
-
-		
-//		hardWait(2);
-		
-//		scroll personal details text into view
+//		select year 2023
+		clickOnListItem(personalDetailsP.years, BaseClass.getProperty("myInfoDLExpYear"));
+//		click on day "S" to retract year drop down
+		clickOnListItem(personalDetailsP.days, BaseClass.getProperty("myInfoCalendarDay"));
+//		select day 11
+		clickOnListItem(personalDetailsP.dates, BaseClass.getProperty("myInfoDLExpDay"));
+//		scroll personal details text into view so the next WebElement is in view
 		jsScrollToElement(myInfoP.personalDetailsText);
-		
-//		click on DL expiry calendar
-		personalDetailsP.DLExpiryCalendar.click();
-		
-//		click on day 11
-		clickOnListItem(personalDetailsP.days, "11");
+//		validate DL expiry box has correct input
+		Assert.assertEquals(personalDetailsP.DLExpBox.getAttribute("value"), BaseClass.getProperty("myInfoDLExpDate"));
+		System.out.println(personalDetailsP.DLExpBox.getAttribute("value"));
 		
 //		click on Nationality dropdown box
-		personalDetailsP.nationalityDropdown.click();
-		
-//		click on Australian from dropdown list
-		clickOnListItem(personalDetailsP.countries, "Australian");
-		
-
-		hardWait(2);
-		
-
+		personalDetailsP.nationalityBox.click();
+//		select Australian from dropdown list
+		clickOnListItem(personalDetailsP.nationality, BaseClass.getProperty("myInfoNationality"));
+//		validate Nationality box has correct info
+		Assert.assertEquals(personalDetailsP.nationalityBox.getText(), BaseClass.getProperty("myInfoNationality"));
+		System.out.println(personalDetailsP.nationalityBox.getText());
 
 		
+//		click on Marital Status dropdown box
+		personalDetailsP.maritalStatusBox.click();
+//		select Single from dropdown list
+		clickOnListItem(personalDetailsP.maritalStatus, BaseClass.getProperty("myInfoMarital"));
+//		validate Marital Status box has correct info
+		Assert.assertEquals(personalDetailsP.maritalStatusBox.getText(), BaseClass.getProperty("myInfoMarital"));
+		System.out.println(personalDetailsP.maritalStatusBox.getText());
 		
+//		click on DOB box
+		personalDetailsP.DOBBox.click();
+//		click on calendar month
+		personalDetailsP.calendarMonth.click();
+//		select month August
+		clickOnListItem(personalDetailsP.months, BaseClass.getProperty("myInfoDOBMonth"));
+//		click on calendar year
+		personalDetailsP.calendarYear.click();
+//		select year 2000
+		clickOnListItem(personalDetailsP.years, BaseClass.getProperty("myInfoDOBYear"));
+//		click on day "S" to retract year drop down
+		clickOnListItem(personalDetailsP.days, BaseClass.getProperty("myInfoCalendarDay"));
+//		scroll personal details text into view so the next WebElement is in view
+		jsScrollToElement(myInfoP.personalDetailsText);
+//		select day 9
+		clickOnListItem(personalDetailsP.dates, BaseClass.getProperty("myInfoDOBDate"));
+//		validate DOB box has correct input
+		Assert.assertEquals(personalDetailsP.DOBBox.getAttribute("value"), BaseClass.getProperty("myInfoDOB"));
+		System.out.println(personalDetailsP.DOBBox.getAttribute("value"));
+		
+//		scroll personal details text into view so the next WebElement is in view
+		jsScrollToElement(myInfoP.personalDetailsText);
+//		click on DOB text to retract calendar
+		personalDetailsP.DOBText.click();
+//		explicit wait for Military Service box to be visible
+		waitForVisibility(personalDetailsP.militaryInput);
+//		click on Military Service text box
+		personalDetailsP.militaryInput.click();
+//		clear the Military Service input text box with JavascriptExecutor
+		jsClear(personalDetailsP.militaryInput);
+//		enter N/A in Military Service text box
+		personalDetailsP.militaryInput.sendKeys(BaseClass.getProperty("myInfoMilitary"));
+//		validate Military Service box has correct input
+		Assert.assertEquals(personalDetailsP.militaryInput.getAttribute("value"), BaseClass.getProperty("myInfoMilitary"));
+		System.out.println(personalDetailsP.militaryInput.getAttribute("value"));
+		
+//		scroll save button into view
+		jsScrollToElement(personalDetailsP.save);
+//		click save
+		personalDetailsP.save.click();
+//		validate info saved with Success pop up on bottom left
+		System.out.println("1");
+		waitForVisibility(personalDetailsP.successPopup);
+		System.out.println("2");
+		Assert.assertTrue(personalDetailsP.successPopup.isDisplayed());
+		System.out.println("3");
+		Assert.assertEquals(personalDetailsP.successText.getText(), BaseClass.getProperty("myInfoSuccessText"));
+		System.out.println(personalDetailsP.successText.getText());
+		Assert.assertEquals(personalDetailsP.updatedText.getText(), BaseClass.getProperty("myInfoUpdatedText"));
+		System.out.println(personalDetailsP.updatedText.getText());
 		
 	}
 

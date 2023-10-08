@@ -120,10 +120,5 @@ public class DirectoryModuleEver extends CommonMethods {
 		Assert.assertEquals(dirP.recordsFoundText.getText(), BaseClass.getProperty("eightRecordsFound"));
 
 	}
-	@AfterMethod
-	public void tearDownCases() {
-
-		BaseClass.tearDown();
-	}
 
 }
