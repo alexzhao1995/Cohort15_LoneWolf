@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import utilities.BaseClass;
 import utilities.CommonMethods;
 
-public class MyInfo_JobFunction extends CommonMethods {
+public class MyInfoPageFunction extends CommonMethods {
 	
 //	Users should be able to switch on Contract Details button to see contract contents
 	@Test(enabled = false)

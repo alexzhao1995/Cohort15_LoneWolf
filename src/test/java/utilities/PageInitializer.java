@@ -1,5 +1,6 @@
 package utilities;
 
+import pages.AdminPage;
 import pages.ClaimPage;
 import pages.CommonPage;
 import pages.EmployeeTrackerPage;
@@ -36,6 +37,7 @@ public class PageInitializer extends BaseClass {
 	public static MyTrackerPage myTrack; 
 	public static MyInfo_PersonalDetailsPage personalDetailsP;
 	public static MyInfo_ContactDetailsPage contactP;
+	public static AdminPage adminP;
 	public static Recruitment_CandidatesPage recruitmentCandidatesP;
 	public static Recruitment_VacanciesPage recruitmentVacanciesP;
 	public static DirectoryPage dirP;
@@ -52,11 +54,12 @@ public class PageInitializer extends BaseClass {
 		perform = new PerformancePage(); 
 		performconfig = new Performance_ConfigureTab(); 
 		kpisPg = new KPIsPage();
-	    iSDPg  = new IntegritySelfDevelopmentPage(); 
-	    employeeTrack = new EmployeeTrackerPage(); 
-	    myTrack = new MyTrackerPage(); 
+	  iSDPg  = new IntegritySelfDevelopmentPage(); 
+	  employeeTrack = new EmployeeTrackerPage(); 
+    myTrack = new MyTrackerPage(); 
 		personalDetailsP = new MyInfo_PersonalDetailsPage();
 		contactP = new MyInfo_ContactDetailsPage();
+		adminP = new AdminPage();
 		recruitmentCandidatesP = new Recruitment_CandidatesPage();
 		recruitmentVacanciesP = new Recruitment_VacanciesPage();
 		dirP = new DirectoryPage();
