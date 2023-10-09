@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="effort_alex.OrangeHRM_TestingLogin">
+      <class name="effort_aziza.TestingConfigureTab">
         <methods>
           <include name="getDriver"/>
           <include name="tearDown"/>
-          <include name="loginValidUserNameValidPassword"/>
+          <include name="teardown"/>
+          <include name="test5MyTracker"/>
         </methods>
-      </class> <!-- effort_alex.OrangeHRM_TestingLogin -->
+      </class> <!-- effort_aziza.TestingConfigureTab -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

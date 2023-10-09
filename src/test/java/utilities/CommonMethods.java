@@ -59,8 +59,7 @@ public class CommonMethods extends PageInitializer {
 				menuItem.click();
 				break;
 			}
-		}
-		
+		}	
 	}
 	
 	
@@ -139,7 +138,16 @@ public class CommonMethods extends PageInitializer {
 	public void onClick(WebElement element) {
 		waitForClickability(element);
 		element.click();
-	}	
+	}
+	
+	public void clickFromList(List<WebElement> dropDown, String value) {
+		for (WebElement element : dropDown) {
+			if (element.getText().trim().contains(value)) {
+				onClick(element);
+				break;
+			}
+		}
+	}
 	
 	
 //	JavaScript Executer Object
