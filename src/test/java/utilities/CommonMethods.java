@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
@@ -260,5 +261,8 @@ public class CommonMethods extends PageInitializer {
     	return sdf.format(date.getTime());
     }
 		
-
+// 	Validate Message Displays
+    public static void validateMessage(String message) {
+    	waitForVisibility(BaseClass.getDriver().findElement(By.xpath("//*[text()='"+message+"']")));
+    }
 }
