@@ -33,5 +33,16 @@ public class LoginPage {
 		passwordInput.sendKeys(password);
 		login.click();
 	}
+	
+	@FindBy(xpath="//input[@name='username']")
+	public WebElement userNameInputField; 
+	
+	
+	@FindBy(xpath="//input[@name='password']")
+	public WebElement passwordInputField;
+
+	
+	@FindBy(xpath="//button[@type='submit']")
+	public WebElement loginButton; 
 
 }
