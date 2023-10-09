@@ -490,7 +490,7 @@ public static void claimAssginAddExpenseDropDownMenu(String itemText) {
 
 	public static void clickOnLeftTabOptions(String itemText) {
 
-		List<WebElement> leftTabMenu = TimeP.mainTabMenu;
+		List<WebElement> leftTabMenu = comP.leftTabOptionsMenu;
 		for (WebElement menuItem : leftTabMenu) {
 			if (menuItem.getText().equalsIgnoreCase(itemText)) {
 				menuItem.click();
