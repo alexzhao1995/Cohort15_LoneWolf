@@ -1,5 +1,6 @@
 package utilities;
 
+import pages.AdminPage;
 import pages.CommonPage;
 import pages.DirectoryPage;
 import pages.LandingPage;
@@ -22,6 +23,7 @@ public class PageInitializer extends BaseClass {
 	public static MyInfo_JobPage jobP;
 	public static MyInfo_PersonalDetailsPage personalDetailsP;
 	public static MyInfo_ContactDetailsPage contactP;
+	public static AdminPage adminP;
 	public static Recruitment_CandidatesPage recruitmentCandidatesP;
 	public static Recruitment_VacanciesPage recruitmentVacanciesP;
 	public static DirectoryPage dirP;
@@ -34,7 +36,8 @@ public class PageInitializer extends BaseClass {
 		reportToP = new MyInfo_ReportToPage();
 		jobP = new MyInfo_JobPage();
 		personalDetailsP = new MyInfo_PersonalDetailsPage();
-    contactP = new MyInfo_ContactDetailsPage();
+		contactP = new MyInfo_ContactDetailsPage();
+		adminP = new AdminPage();
 		recruitmentCandidatesP = new Recruitment_CandidatesPage();
 		recruitmentVacanciesP = new Recruitment_VacanciesPage();
 		dirP = new DirectoryPage();
