@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
+import utilities.BaseClass;
+
 import Utilities.BaseClass;
+
 
 public class TimePage {
 
@@ -88,7 +92,11 @@ public class TimePage {
 	@FindBy(xpath="//div[@class='oxd-table-cell oxd-padding-cell']")
 	public List<WebElement> projectInfoEmployeeNamesTable;
 	
+
+	@FindBy(xpath="//i[@class='oxd-icon bi-trash' and @xpath='1']")
+
 	@FindBy(xpath="//div[@class='orangehrm-container']//div[3]//div[1]//div[4]//div[1]//button[1]")
+
 	public WebElement projectInfoCustomersDeleteButton;
 	
 	

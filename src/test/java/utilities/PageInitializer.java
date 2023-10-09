@@ -38,7 +38,7 @@ public class PageInitializer extends BaseClass {
 		reportToP = new MyInfo_ReportToPage();
 		jobP = new MyInfo_JobPage();
 		personalDetailsP = new MyInfo_PersonalDetailsPage();
-    contactP = new MyInfo_ContactDetailsPage();
+		contactP = new MyInfo_ContactDetailsPage();
 		recruitmentCandidatesP = new Recruitment_CandidatesPage();
 		recruitmentVacanciesP = new Recruitment_VacanciesPage();
 		dirP = new DirectoryPage();

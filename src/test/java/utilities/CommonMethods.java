@@ -14,7 +14,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,7 +24,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
 
 
-public class CommonMethods extends PageInitializer {
+public class CommonMethods extends PageInitializer{
 	
 	
 	public static Faker faker = new Faker();
@@ -77,7 +76,16 @@ public class CommonMethods extends PageInitializer {
 		}
 		
 	}
-	
+	public static void clickOnMainTab1(String item1Text) {
+
+		List<WebElement> mainMenu = TimeP.mainTabMenu;
+		for (WebElement menuItem : mainMenu) {
+			if (menuItem.getText().equalsIgnoreCase(item1Text)) {
+				menuItem.click();
+				break;
+			}
+		}
+	}
 	
 //	below method clicks on one of the items from the dropdown list
 	public static void clickOnListItem(List<WebElement> item, String itemText) {
