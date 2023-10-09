@@ -23,4 +23,10 @@ public class LandingPage {
 	@FindBy(xpath = "//ul[@class='oxd-dropdown-menu']/li")
 	public List<WebElement> profileDropdown;	
 	
+	@FindBy(xpath="//span[@class='oxd-userdropdown-tab']")
+	public WebElement profileDropdownTab; 
+	
+	
+	
+	
 }

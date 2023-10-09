@@ -1,7 +1,11 @@
 package utilities;
 
 import pages.AdminPage;
+import pages.ClaimPage;
 import pages.CommonPage;
+import pages.EmployeeTrackerPage;
+import pages.IntegritySelfDevelopmentPage;
+import pages.KPIsPage;
 import pages.DirectoryPage;
 import pages.LandingPage;
 import pages.LoginPage;
@@ -10,8 +14,12 @@ import pages.MyInfo_ContactDetailsPage;
 import pages.MyInfo_JobPage;
 import pages.MyInfo_PersonalDetailsPage;
 import pages.MyInfo_ReportToPage;
+import pages.MyTrackerPage;
+import pages.PerformancePage;
+import pages.Performance_ConfigureTab;
 import pages.Recruitment_CandidatesPage;
 import pages.Recruitment_VacanciesPage;
+import pages.TimePage;
 
 public class PageInitializer extends BaseClass {
 	
@@ -21,12 +29,20 @@ public class PageInitializer extends BaseClass {
 	public static MyInfoPage myInfoP;
 	public static MyInfo_ReportToPage reportToP;
 	public static MyInfo_JobPage jobP;
+	public static PerformancePage perform;
+	public static Performance_ConfigureTab performconfig; 
+	public static KPIsPage kpisPg; 
+	public static IntegritySelfDevelopmentPage iSDPg; 
+	public static EmployeeTrackerPage employeeTrack; 
+	public static MyTrackerPage myTrack; 
 	public static MyInfo_PersonalDetailsPage personalDetailsP;
 	public static MyInfo_ContactDetailsPage contactP;
 	public static AdminPage adminP;
 	public static Recruitment_CandidatesPage recruitmentCandidatesP;
 	public static Recruitment_VacanciesPage recruitmentVacanciesP;
 	public static DirectoryPage dirP;
+	public static ClaimPage ClaimP;
+	public static TimePage TimeP;
 	
 	public static void initialize() {
 		lp = new LoginPage();
@@ -35,12 +51,20 @@ public class PageInitializer extends BaseClass {
 		myInfoP = new MyInfoPage();
 		reportToP = new MyInfo_ReportToPage();
 		jobP = new MyInfo_JobPage();
+		perform = new PerformancePage(); 
+		performconfig = new Performance_ConfigureTab(); 
+		kpisPg = new KPIsPage();
+	  iSDPg  = new IntegritySelfDevelopmentPage(); 
+	  employeeTrack = new EmployeeTrackerPage(); 
+    myTrack = new MyTrackerPage(); 
 		personalDetailsP = new MyInfo_PersonalDetailsPage();
 		contactP = new MyInfo_ContactDetailsPage();
 		adminP = new AdminPage();
 		recruitmentCandidatesP = new Recruitment_CandidatesPage();
 		recruitmentVacanciesP = new Recruitment_VacanciesPage();
 		dirP = new DirectoryPage();
+		ClaimP = new ClaimPage();
+		TimeP = new TimePage();
 
   }
 
