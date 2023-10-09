@@ -2,7 +2,6 @@ package effort_ever;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import utilities.BaseClass;
@@ -10,10 +9,12 @@ import utilities.CommonMethods;
 
 public class DirectoryModuleEver extends CommonMethods {
 
-	@Test
+	@Test(enabled = true)
 	public void TestingEmployee1NameWithValidEmployeeNameAndInvalidJobTitle() {
 
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+		
+		Assert.assertTrue(landP.profile.isDisplayed());
 
 		CommonMethods.clickOnLeftMenuBarItem("Directory");
 		
@@ -35,10 +36,12 @@ public class DirectoryModuleEver extends CommonMethods {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void TestingEmployee2JobTittleFunction() {
 
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+		
+		Assert.assertTrue(landP.profile.isDisplayed());
 
 		CommonMethods.clickOnLeftMenuBarItem("Directory");
 		
@@ -58,10 +61,12 @@ public class DirectoryModuleEver extends CommonMethods {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void TestingEmployee3NameSearchFunctionWithValidEmployeeName() {
 
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+		
+		Assert.assertTrue(landP.profile.isDisplayed());
 		
 		CommonMethods.clickOnLeftMenuBarItem("Directory");
 		
@@ -79,10 +84,12 @@ public class DirectoryModuleEver extends CommonMethods {
 
 	}
 
-	@Test
+	@Test(enabled = true)
 	public void TestingEmployee4NameSearchFunctionWithInvalidEmployeeName() {
 
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+		
+		Assert.assertTrue(landP.profile.isDisplayed());
 		
 		CommonMethods.clickOnLeftMenuBarItem("Directory");
 
@@ -100,10 +107,12 @@ public class DirectoryModuleEver extends CommonMethods {
 
 	}
 	
-	@Test
+	@Test(enabled = true)
 	public void TestingEmployee5LocationSearchFunction() {
 
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+		
+		Assert.assertTrue(landP.profile.isDisplayed());
 
 		CommonMethods.clickOnLeftMenuBarItem("Directory");
 		
@@ -120,5 +129,5 @@ public class DirectoryModuleEver extends CommonMethods {
 		Assert.assertEquals(dirP.recordsFoundText.getText(), BaseClass.getProperty("eightRecordsFound"));
 
 	}
-
+	
 }
