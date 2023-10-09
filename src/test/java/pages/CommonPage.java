@@ -17,5 +17,9 @@ public class CommonPage {
 	
 	@FindBy(xpath = "//ul[@class='oxd-main-menu']/li")
 	public List<WebElement> leftMenuBarItem;
+	
+	@FindBy(xpath="//ul[@class = 'oxd-main-menu']/li")
+	public List<WebElement> leftTabOptionsMenu;
+	
 
 }
