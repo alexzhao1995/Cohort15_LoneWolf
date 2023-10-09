@@ -268,5 +268,8 @@ public class CommonMethods extends PageInitializer {
     	return sdf.format(date.getTime());
     }
 		
-
+// 	Validate Message Displays
+    public static void validateMessage(String message) {
+    	waitForVisibility(BaseClass.getDriver().findElement(By.xpath("//*[text()='"+message+"']")));
+    }
 }

@@ -9,6 +9,8 @@ import pages.MyInfo_ContactDetailsPage;
 import pages.MyInfo_JobPage;
 import pages.MyInfo_PersonalDetailsPage;
 import pages.MyInfo_ReportToPage;
+import pages.Recruitment_CandidatesPage;
+import pages.Recruitment_VacanciesPage;
 
 public class PageInitializer extends BaseClass {
 	
@@ -20,6 +22,8 @@ public class PageInitializer extends BaseClass {
 	public static MyInfo_JobPage jobP;
 	public static MyInfo_PersonalDetailsPage personalDetailsP;
 	public static MyInfo_ContactDetailsPage contactP;
+	public static Recruitment_CandidatesPage recruitmentCandidatesP;
+	public static Recruitment_VacanciesPage recruitmentVacanciesP;
 	public static DirectoryPage dirP;
 	
 	public static void initialize() {
@@ -30,9 +34,11 @@ public class PageInitializer extends BaseClass {
 		reportToP = new MyInfo_ReportToPage();
 		jobP = new MyInfo_JobPage();
 		personalDetailsP = new MyInfo_PersonalDetailsPage();
-		contactP = new MyInfo_ContactDetailsPage();
+    contactP = new MyInfo_ContactDetailsPage();
+		recruitmentCandidatesP = new Recruitment_CandidatesPage();
+		recruitmentVacanciesP = new Recruitment_VacanciesPage();
 		dirP = new DirectoryPage();
 
-	}
+  }
 
 }
