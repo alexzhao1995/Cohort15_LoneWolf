@@ -14,7 +14,7 @@ public class DirectoryModuleEver extends CommonMethods {
 
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
 		
-		Assert.assertTrue(landP.profile.isDisplayed());
+		Assert.assertTrue(landP.profile.isDisplayed()); 
 
 		CommonMethods.clickOnLeftMenuBarItem("Directory");
 		
