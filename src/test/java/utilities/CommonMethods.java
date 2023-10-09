@@ -9,10 +9,12 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -64,12 +66,11 @@ public class CommonMethods extends PageInitializer {
 	}
 	
 	
-//	below method clicks on one of the tabs on the My Info page
-	public static void clickOnMyInfoTabItem(String itemText) {
-		List<WebElement> myInfoTabs = myInfoP.myInfoTabItem;
-		for(WebElement tabItem : myInfoTabs) {
-			if(tabItem.getText().equalsIgnoreCase(itemText)) {
-				tabItem.click();
+//	below method clicks on one of the items from the dropdown list
+	public static void clickOnListItem(List<WebElement> item, String itemText) {
+		for(WebElement e : item) {
+			if(e.getText().equalsIgnoreCase(itemText)) {
+				e.click();
 				break;
 			}
 		}
@@ -136,9 +137,10 @@ public class CommonMethods extends PageInitializer {
 	
 	
 //	this waits until element is clickable and then clears and clicks on an element
-	public void onClick(WebElement element) {
+	public static void onClick(WebElement element) {
 		waitForClickability(element);
 		element.click();
+		element.clear();
 	}	
 	
 	
@@ -146,6 +148,12 @@ public class CommonMethods extends PageInitializer {
 	public static JavascriptExecutor getJSObject() {
 		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		return js;
+	}
+	
+	
+//	JavaScript Executor clear method
+	public static void jsClear(WebElement element) {
+		getJSObject().executeScript("arguments[0].value = '';", element);
 	}
 	
 	
@@ -194,7 +202,7 @@ public class CommonMethods extends PageInitializer {
     }
 	
 	
-//	methods checks if radio/checkbox is enabled and clicks on it
+//	methods checks if radio / checkbox is enabled and clicks on it
     public static void clickRadioOrCheckbox(List<WebElement> radioOrcheckbox, String valueToBeSelected) {
         String actualValue;
         for (WebElement el : radioOrcheckbox) {
