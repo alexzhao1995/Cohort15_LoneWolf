@@ -330,10 +330,27 @@ public class CommonMethods extends PageInitializer{
 	            }
 	        }
 	    }
-	    
-	    
-	    System.out.println("No row with both values found: " + eventName + ", " + eventStatus);
 	    return false;
+		
+	    }
+	    
+	    public static void myClaimsIndexTable(String refID, String eventName) {
+		    for (WebElement row : ClaimP.claimConfigurationsEventslistTable1) {
+		        List<WebElement> cells = row.findElements(By.xpath(".//div[@class='oxd-table-cell oxd-padding-cell']"));
+		        
+		        if (cells.size() >= 1) {
+		            String cellText1 = cells.get(1).getText();
+		            String cellText2 = cells.get(2).getText();
+		            
+		            if (cellText1.equalsIgnoreCase(refID) && cellText2.equalsIgnoreCase(eventName)) {
+		                System.out.println("Row with values found: " + refID + ", " + eventName);
+		                ClaimP.myClaimsViewButton03.click();
+		            }
+		        }
+		    }
+	    
+	    
+	    System.out.println("No row with both values found: " + eventName + ", " + eventName);
 	}
 
 			
@@ -490,7 +507,7 @@ public static void claimAssginAddExpenseDropDownMenu(String itemText) {
 
 	public static void clickOnLeftTabOptions(String itemText) {
 
-		List<WebElement> leftTabMenu = TimeP.mainTabMenu;
+		List<WebElement> leftTabMenu = comP.leftMenuBarItem;
 		for (WebElement menuItem : leftTabMenu) {
 			if (menuItem.getText().equalsIgnoreCase(itemText)) {
 				menuItem.click();

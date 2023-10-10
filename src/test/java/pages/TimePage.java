@@ -251,7 +251,8 @@ public class TimePage {
 	@FindBy(xpath="//button[@type='submit']")
 	public WebElement TimeSheetsEmployeeTimeSheetsViewButton;
 	
-	
+	@FindBy(xpath="//span[@class='oxd-switch-input oxd-switch-input--active --label-right']")
+	public WebElement TimeReportsProjectsSlideButton;
 	
 }
 	

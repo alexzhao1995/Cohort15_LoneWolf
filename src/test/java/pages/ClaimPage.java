@@ -284,6 +284,12 @@ public class ClaimPage {
 		@FindBy(xpath="//button[normalize-space()='Back']")
 		public WebElement myClaimsBackButton;
 		
+		@FindBy(xpath="//button[@type='button' and contains(@class, 'oxd-button') and contains(@class, 'oxd-button--medium') and contains(@class, 'oxd-button--text') and contains(@class, 'oxd-table-cell-action-space') and @data-v-10d463b7 and @data-v-c423d1fa and @xpath='1']")
+		public WebElement myClaimsViewButton01;
+		
+		@FindBy(xpath="//button[@type='button' and contains(@class, 'oxd-button') and contains(@class, 'oxd-button--medium') and contains(@class, 'oxd-button--text') and contains(@class, 'oxd-table-cell-action-space') and @data-v-10d463b7='' and @data-v-='']")
+		public WebElement myClaimsViewButton03;
+		
 	//Inactivate event type
 		
 		@FindBy(xpath="//i[@class='oxd-icon bi-chevron-down']")
