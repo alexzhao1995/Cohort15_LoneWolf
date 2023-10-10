@@ -31,6 +31,8 @@ public class MyInfo_JobPage {
 	public WebElement contractDetailsText;
 	
 	
+	
+	
 //	element click intercepted: Element <div class="oxd-switch-wrapper" data-v-8e4757dc=""
 //	data-v-1dfb2fdc="">...</div> is not clickable at point (796, 511).
 //	Other element would receive the click: <div class="oxd-form-loader" data-v-d5bfe35b="">...</div>
