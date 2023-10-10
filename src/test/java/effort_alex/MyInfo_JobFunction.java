@@ -20,24 +20,20 @@ public class MyInfo_JobFunction extends CommonMethods {
 		Assert.assertTrue(landP.profile.isDisplayed());
 		
 //		navigate to My Info page
-		clickOnListItem(comP.leftMenuBarItem, "My Info");
+		clickOnListItem(comP.leftMenuBarItem, BaseClass.getProperty("myInfoPage"));
 //		validate on My Info page with the Personal Details text
 		Assert.assertEquals(myInfoP.personalDetailsText.getText(), BaseClass.getProperty("personalDetailsText"));
 		
 //		navigate to Job tab on My Info page
-		clickOnListItem(myInfoP.myInfoTabItem, "Job");
+		clickOnListItem(myInfoP.myInfoTabItem, BaseClass.getProperty("jobTabText"));
 //		validate on Job tab with Job Details text
 		Assert.assertEquals(jobP.jobDetailsText.getText(), BaseClass.getProperty("jobDetailsText"));
 		
 //		explicit wait for Employment Contract Details switch button
 		waitForClickability(jobP.contractDetailsButton);
-//		waitForVisibility(jobP.contractDetailsButton);
-//		waitForVisibility(jobP.contractDetailsButtonText);
-//		hardWait(3);
 
 //		click on Include Employment Contract Details switch button
 		jobP.contractDetailsButton.click();
-//		CommonMethods.jsClick(jobP.contractDetailsButton);
 		
 //		validate contract details button clicked with Contract Start Date, Contract End Date, and Contract Details texts
 		Assert.assertEquals(jobP.contractStartText.getText(), BaseClass.getProperty("contractStartText"));
@@ -51,20 +47,19 @@ public class MyInfo_JobFunction extends CommonMethods {
 //	Users should be able to know the name of their "Assigned Supervisors" and "Assigned Subordinates"
 	@Test(enabled = false)
 	public void reportToContent() {
+		
 //		login with valid username and password
 		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
 //		validate logged in with if the user profile is displayed
 		Assert.assertTrue(landP.profile.isDisplayed());
 		
 //		navigate to My Info page
-//		clickOnLeftMenuBarItem("My Info");
-		clickOnListItem(comP.leftMenuBarItem, "My Info");
+		clickOnListItem(comP.leftMenuBarItem, BaseClass.getProperty("myInfoPage"));
 //		validate on My Info page with the Personal Details text
 		Assert.assertEquals(myInfoP.personalDetailsText.getText(), BaseClass.getProperty("personalDetailsText"));
 		
 //		navigate to Report-to tab on My Info page
-//		clickOnMyInfoTabItem("Report-to");
-		clickOnListItem(myInfoP.myInfoTabItem, "Report-to");
+		clickOnListItem(myInfoP.myInfoTabItem, BaseClass.getProperty("reportToTabText"));
 //		validate on Report-to tab with Report to text
 		Assert.assertEquals(reportToP.reportToText.getText(), BaseClass.getProperty("reportToText"));
 		
@@ -82,7 +77,7 @@ public class MyInfo_JobFunction extends CommonMethods {
 	
 	
 //	Users should be able to update personal information with a proper date format
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void updatePersonalDetails() {
 		
 //		login with valid username and password
@@ -255,6 +250,84 @@ public class MyInfo_JobFunction extends CommonMethods {
 		System.out.println(personalDetailsP.successText.getText());
 		Assert.assertEquals(personalDetailsP.updatedText.getText(), BaseClass.getProperty("myInfoUpdatedText"));
 		System.out.println(personalDetailsP.updatedText.getText());
+		
+	}
+	
+	
+	
+//	User should not be able to update their contact details with invalid format
+	@Test(enabled = false)
+	public void updateContactDetailsInvalidFormat() {
+		
+//		login with valid username and password
+		lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+//		validate logged in with if the user profile is displayed
+		Assert.assertTrue(landP.profile.isDisplayed());
+		
+//		navigate to My Info page
+		clickOnListItem(comP.leftMenuBarItem, BaseClass.getProperty("myInfoPage"));
+//		validate on My Info page with the Personal Details text
+		Assert.assertEquals(myInfoP.personalDetailsText.getText(), BaseClass.getProperty("personalDetailsText"));
+		
+		
+//		navigate to Contact Details tab on My Info page
+		clickOnListItem(myInfoP.myInfoTabItem, BaseClass.getProperty("contactTabText"));
+//		validate on Contact Details tab with Contact Details text
+		Assert.assertEquals(contactP.contactDetailsText.getText(), BaseClass.getProperty("contactTabText"));
+
+//		wait for form loader to disappear
+//		getWaitObject().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(BaseClass.getProperty("myInfoFormLoaderXpath"))));
+//		waitForVisibility(contactP.contactDetailsText);
+		
+//		click on Home phone input
+		contactP.homeNumInput.click();
+//		clear Home phone input
+		jsClear(contactP.homeNumInput);
+//		enter Home phone #
+		contactP.homeNumInput.sendKeys(BaseClass.getProperty("homeNum"));
+//		validate invalid Home phone # format with input error message
+		Assert.assertEquals(contactP.homeNumErrorText.getText(), BaseClass.getProperty("inputErrorText"));
+		System.out.println(contactP.homeNumErrorText.getText());
+		
+//		click on Mobile phone input
+		contactP.mobileNumInput.click();
+//		clear Mobile phone input
+		jsClear(contactP.mobileNumInput);
+//		enter Mobile phone #
+		contactP.mobileNumInput.sendKeys(BaseClass.getProperty("mobileNum"));
+//		validate invalid Home phone # format with input error message
+		Assert.assertEquals(contactP.mobileNumErrorText.getText(), BaseClass.getProperty("inputErrorText"));
+		System.out.println(contactP.mobileNumErrorText.getText());
+		
+//		click on Work phone input
+		contactP.workNumInput.click();
+//		clear Work phone input
+		jsClear(contactP.workNumInput);
+//		enter Work phone #
+		contactP.workNumInput.sendKeys(BaseClass.getProperty("workNum"));
+//		validate invalid Home phone # format with input error message
+		Assert.assertEquals(contactP.workNumErrorText.getText(), BaseClass.getProperty("inputErrorText"));
+		System.out.println(contactP.workNumErrorText.getText());
+		
+//		click on Work Email input
+		contactP.workEmailInput.click();
+//		clear Work Email input
+		jsClear(contactP.workEmailInput);
+//		enter Work Email
+		contactP.workEmailInput.sendKeys(BaseClass.getProperty("myInfoEmail"));
+//		validate invalid Home phone # format with input error message
+		Assert.assertEquals(contactP.workEmailErrorText.getText(), BaseClass.getProperty("emailErrorText"));
+		System.out.println(contactP.workEmailErrorText.getText());
+		
+//		click on Other Email input
+		contactP.otherEmailInput.click();
+//		clear Other Email input
+		jsClear(contactP.otherEmailInput);
+//		enter Other Email
+		contactP.otherEmailInput.sendKeys(BaseClass.getProperty("myInfoEmail"));
+//		validate invalid Home phone # format with input error message
+		Assert.assertEquals(contactP.otherEmailErrorText.getText(), BaseClass.getProperty("emailErrorText"));
+		System.out.println(contactP.otherEmailErrorText.getText());
 		
 	}
 

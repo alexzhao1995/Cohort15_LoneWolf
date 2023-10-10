@@ -17,7 +17,7 @@ public class MyInfoPage {
 	@FindBy(xpath = "//div[@class='orangehrm-tabs-wrapper']")
 	public List <WebElement> myInfoTabItem;
 	
-	@FindBy(xpath = "(//h6[@class='oxd-text oxd-text--h6 orangehrm-main-title'])[1]")
+	@FindBy(xpath = "//h6[contains(.,'Personal Details')]")
 	public WebElement personalDetailsText;
 
 }
