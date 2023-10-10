@@ -266,25 +266,7 @@ public class orangeHRM_TestingLogin extends CommonMethods {
 			e.printStackTrace();
 		}
 	}
-
-////		//Cancel a claim
-	@Test
-	public void cancelAClaim() {
-		try {
-			lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
-			CommonMethods.clickOnMainTab("Claim");
-			ClaimP.myClaimsTab.click();
-			CommonMethods.myClaimsIndexTable("202307180000003", "Travel Allowance");
-			ClaimP.myClaimsCancelButton.click();
-			ClaimP.myClaimsBackButton.click();
-		} catch (Exception e6) {
-			// Handle the exception or log it
-			System.err.println("An error occurred: " + e6.getMessage());
-			e6.printStackTrace();
-
-		}
-	}
-
+	
 //////Inactivate event type
 //@Test
 	public void inactivateAClaim() {
@@ -307,29 +289,48 @@ public class orangeHRM_TestingLogin extends CommonMethods {
 			e8.printStackTrace();
 		}
 	}
+	
+////////Claim reset function
+@Test
+public void resetAClaim() {
+try {
+	lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+	CommonMethods.clickOnMainTab("Claim");
+	CommonMethods.waitInSeconds(2);
+	CommonMethods.claimEmployeeInfoPoppedUpList1("Paul Collings", "202307180000006", "Travel Accommodation",
+			"Submitted", "Current Employees Only");
+	CommonMethods.waitInSeconds(2);
+	CommonMethods.claimMyClaimsCalendarFromMenu("September", "2023");
+	CommonMethods.waitInSeconds(2);
+	CommonMethods.claimMyClaimsCalendarToMenu("2023", "October");
+	ClaimP.ClaimEmployeeClaimsSearchButton.click();
+	ClaimP.ClaimEmployeeClaimsResetButton.click();
+	System.out.println("Logged in successfully.");
+} catch (Exception e8) {
+	// Handle the exception or log it
+	System.err.println("An error occurred: " + e8.getMessage());
+	e8.printStackTrace();
 
-//////		//Claim reset function
+}
+}
+
+////		//Cancel a claim
 	@Test
-	public void resetAClaim() {
+	public void cancelAClaim() {
 		try {
 			lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
 			CommonMethods.clickOnMainTab("Claim");
-			CommonMethods.waitInSeconds(2);
-			CommonMethods.claimEmployeeInfoPoppedUpList1("Paul Collings", "202307180000006", "Travel Accommodation",
-					"Submitted", "Current Employees Only");
-			CommonMethods.waitInSeconds(2);
-			CommonMethods.claimMyClaimsCalendarFromMenu("September", "2023");
-			CommonMethods.waitInSeconds(2);
-			CommonMethods.claimMyClaimsCalendarToMenu("2023", "October");
-			ClaimP.ClaimEmployeeClaimsSearchButton.click();
-			ClaimP.ClaimEmployeeClaimsResetButton.click();
-			System.out.println("Logged in successfully.");
-		} catch (Exception e8) {
+			ClaimP.myClaimsTab.click();
+			CommonMethods.myClaimsIndexTable("202307180000003", "Travel Allowance");
+			ClaimP.myClaimsCancelButton.click();
+			ClaimP.myClaimsBackButton.click();
+		} catch (Exception e6) {
 			// Handle the exception or log it
-			System.err.println("An error occurred: " + e8.getMessage());
-			e8.printStackTrace();
+			System.err.println("An error occurred: " + e6.getMessage());
+			e6.printStackTrace();
 
 		}
 	}
+
 
 }
