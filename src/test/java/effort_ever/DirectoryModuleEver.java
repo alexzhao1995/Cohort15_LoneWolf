@@ -16,7 +16,7 @@ public class DirectoryModuleEver extends CommonMethods {
 		
 		Assert.assertTrue(landP.profile.isDisplayed()); 
 
-		CommonMethods.clickOnLeftMenuBarItem("Directory");
+		CommonMethods.clickOnLeftMenuBarItem("directory");
 		
 		Assert.assertEquals(dirP.directoryTextAssertion.getText(), BaseClass.getProperty("directoryText"));
 
@@ -43,7 +43,7 @@ public class DirectoryModuleEver extends CommonMethods {
 		
 		Assert.assertTrue(landP.profile.isDisplayed());
 
-		CommonMethods.clickOnLeftMenuBarItem("Directory");
+		CommonMethods.clickOnLeftMenuBarItem("directory");
 		
 		Assert.assertEquals(dirP.directoryTextAssertion.getText(), BaseClass.getProperty("directoryText"));
 
@@ -68,7 +68,7 @@ public class DirectoryModuleEver extends CommonMethods {
 		
 		Assert.assertTrue(landP.profile.isDisplayed());
 		
-		CommonMethods.clickOnLeftMenuBarItem("Directory");
+		CommonMethods.clickOnLeftMenuBarItem("directory");
 		
 		Assert.assertEquals(dirP.directoryTextAssertion.getText(), BaseClass.getProperty("directoryText"));
 
@@ -91,7 +91,7 @@ public class DirectoryModuleEver extends CommonMethods {
 		
 		Assert.assertTrue(landP.profile.isDisplayed());
 		
-		CommonMethods.clickOnLeftMenuBarItem("Directory");
+		CommonMethods.clickOnLeftMenuBarItem("directory");
 
 		Assert.assertEquals(dirP.directoryTextAssertion.getText(), BaseClass.getProperty("directoryText"));
 
@@ -114,7 +114,7 @@ public class DirectoryModuleEver extends CommonMethods {
 		
 		Assert.assertTrue(landP.profile.isDisplayed());
 
-		CommonMethods.clickOnLeftMenuBarItem("Directory");
+		CommonMethods.clickOnLeftMenuBarItem("directory");
 		
 		Assert.assertEquals(dirP.directoryTextAssertion.getText(), BaseClass.getProperty("directoryText"));
 
@@ -130,4 +130,9 @@ public class DirectoryModuleEver extends CommonMethods {
 
 	}
 	
+	@AfterMethod
+	public void closeDownTest() {
+		
+		BaseClass.tearDown();
+	}
 }
