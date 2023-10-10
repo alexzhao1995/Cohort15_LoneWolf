@@ -15,6 +15,7 @@ import pages.MyInfo_ContactDetailsPage;
 import pages.MyInfo_JobPage;
 import pages.MyInfo_PersonalDetailsPage;
 import pages.MyInfo_ReportToPage;
+import pages.PIMConfiguration;
 import pages.MyTrackerPage;
 import pages.PerformancePage;
 import pages.Performance_ConfigureTab;
@@ -45,6 +46,7 @@ public class PageInitializer extends BaseClass {
 	public static DirectoryPage dirP;
 	public static ClaimPage ClaimP;
 	public static TimePage TimeP;
+	public static PIMConfiguration pimCon;
 
 	public static void initialize() {
 		lp = new LoginPage();
@@ -68,7 +70,9 @@ public class PageInitializer extends BaseClass {
 		dirP = new DirectoryPage();
 		ClaimP = new ClaimPage();
 		TimeP = new TimePage();
+    pimCon = new PIMConfiguration();
 
+    
 	}
 
 }
