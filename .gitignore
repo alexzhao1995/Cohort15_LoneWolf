@@ -1,4 +1,5 @@
 /target/
+test-output/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -125,6 +126,7 @@ hs_err_pid*
 
 ### Maven ###
 target/
+test-output/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
