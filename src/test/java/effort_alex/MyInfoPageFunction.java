@@ -240,10 +240,11 @@ public class MyInfoPageFunction extends CommonMethods {
 		jsScrollToElement(personalDetailsP.save);
 //		click save
 		personalDetailsP.save.click();
-//		validate info saved with Success pop up on bottom left
 		System.out.println("1");
+//		explicit wait for success pop-up
 		waitForVisibility(personalDetailsP.successPopup);
 		System.out.println("2");
+//		validate info saved with Success pop up on bottom left
 		Assert.assertTrue(personalDetailsP.successPopup.isDisplayed());
 		System.out.println("3");
 		Assert.assertEquals(personalDetailsP.successText.getText(), BaseClass.getProperty("myInfoSuccessText"));
