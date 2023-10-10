@@ -19,5 +19,12 @@ public class MyInfoPage {
 	
 	@FindBy(xpath = "//h6[contains(.,'Personal Details')]")
 	public WebElement personalDetailsText;
+	
+	
+	
+	
+	//span[@data-v-13cf171c=''][text()='Contact Details']
+
+
 
 }
