@@ -1,12 +1,13 @@
 package utilities;
 
 import pages.AdminPage;
+import pages.AdminQualificationsSkillsPage;
 import pages.ClaimPage;
 import pages.CommonPage;
+import pages.DirectoryPage;
 import pages.EmployeeTrackerPage;
 import pages.IntegritySelfDevelopmentPage;
 import pages.KPIsPage;
-import pages.DirectoryPage;
 import pages.LandingPage;
 import pages.LoginPage;
 import pages.MyInfoPage;
@@ -39,13 +40,12 @@ public class PageInitializer extends BaseClass {
 	public static MyInfo_PersonalDetailsPage personalDetailsP;
 	public static MyInfo_ContactDetailsPage contactP;
 	public static AdminPage adminP;
+	public static AdminQualificationsSkillsPage skillsP;
 	public static Recruitment_CandidatesPage recruitmentCandidatesP;
 	public static Recruitment_VacanciesPage recruitmentVacanciesP;
 	public static DirectoryPage dirP;
 	public static ClaimPage ClaimP;
 	public static TimePage TimeP;
-
-	// PIM
 	public static PIMConfiguration pimCon;
 
 	public static void initialize() {
@@ -55,7 +55,6 @@ public class PageInitializer extends BaseClass {
 		myInfoP = new MyInfoPage();
 		reportToP = new MyInfo_ReportToPage();
 		jobP = new MyInfo_JobPage();
-		pimCon = new PIMConfiguration();
 		perform = new PerformancePage();
 		performconfig = new Performance_ConfigureTab();
 		kpisPg = new KPIsPage();
@@ -65,12 +64,15 @@ public class PageInitializer extends BaseClass {
 		personalDetailsP = new MyInfo_PersonalDetailsPage();
 		contactP = new MyInfo_ContactDetailsPage();
 		adminP = new AdminPage();
+		skillsP = new AdminQualificationsSkillsPage();
 		recruitmentCandidatesP = new Recruitment_CandidatesPage();
 		recruitmentVacanciesP = new Recruitment_VacanciesPage();
 		dirP = new DirectoryPage();
 		ClaimP = new ClaimPage();
 		TimeP = new TimePage();
+    pimCon = new PIMConfiguration();
 
+    
 	}
 
 }

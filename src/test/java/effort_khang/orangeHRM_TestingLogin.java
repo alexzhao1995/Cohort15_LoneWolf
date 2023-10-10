@@ -86,7 +86,7 @@ public class orangeHRM_TestingLogin extends CommonMethods {
 
 	@Test
 
-	public void timeReports() {
+	public void timeReports1() {
 //Reports page search employee records
 
 		try {
@@ -334,30 +334,32 @@ public void checkAttendance() {
 	
 	}	
 		}
-		
+
 //		//Inactivate event type
-@Test
+		@Test
 		public void inactivateAClaim() {
-	 try {
-	lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
-	CommonMethods.clickOnMainTab("Claim");
-	ClaimP.claimConfigurationsButton.click();
-		CommonMethods.claimConfigurationsDropMenu("Events");
-		ClaimP.claimConfigurationsEventsAddButton.click();
-		ClaimP.claimConfigurationsEventsEventName.sendKeys("Company Outing");		
-		ClaimP.claimConfigurationsEventsDescBox.sendKeys("company outing events");
-		ClaimP.claimConfigurationsEventsToggleButton.click();
-		ClaimP.claimConfigurationsEventsSaveButton.click();
-		waitInSeconds(5);
-		CommonMethods.configurationsEventInactivateFunction("Company Dinner","Inactive");
-	
-	 } catch (Exception e8) {
-	        // Handle the exception or log it
-	        System.err.println("An error occurred: " + e8.getMessage());
-	        e8.printStackTrace();
-}	
+			try {
+				lp.loginToHrm(BaseClass.getProperty("username"), BaseClass.getProperty("password"));
+				CommonMethods.clickOnMainTab("Claim");
+				ClaimP.claimConfigurationsButton.click();
+				CommonMethods.claimConfigurationsDropMenu("Events");
+				ClaimP.claimConfigurationsEventsAddButton.click();
+				ClaimP.claimConfigurationsEventsEventName.sendKeys("Company Outing");
+				ClaimP.claimConfigurationsEventsDescBox.sendKeys("company outing events");
+				ClaimP.claimConfigurationsEventsToggleButton.click();
+				ClaimP.claimConfigurationsEventsSaveButton.click();
+				waitInSeconds(5);
+				CommonMethods.configurationsEventInactivateFunction("Company Dinner", "Inactive");
+
+			} catch (Exception e8) {
+				// Handle the exception or log it
+				System.err.println("An error occurred: " + e8.getMessage());
+				e8.printStackTrace();
+			}
+		}
 
 	WebDriver driver;
+
 	
 	@Test
 	public void questionMarkLink() {

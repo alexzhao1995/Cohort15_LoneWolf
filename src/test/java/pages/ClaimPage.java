@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.BaseClass;
 
-import effort_khang.BaseClass;
+//import effort_khang.BaseClass;
 
 
 public class ClaimPage {
