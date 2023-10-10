@@ -1,10 +1,11 @@
-package effort_khang;
+package effort_gianina;
 
-public class EmptyClass {
+public class gianina {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		System.out.println("hello");
 	}
 
 }
